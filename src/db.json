@@ -1,0 +1,32 @@
+{
+    "logs" : [
+    {
+        "id": 1,
+        "message": "Changed hard drive on workstation 005",
+        "attention": false,
+        "date": "03-02-2019",
+        "tech": "Sam smith"
+    },
+    {
+        "id": 2,
+        "message": "Jet aint doing this shit",
+        "attention": true,
+        "date": "05-02-2019",
+        "tech": "Jet Smith"
+    }
+
+    ],
+    "techs": [
+        {
+            "id": 1,
+            "firstName": "Sam",
+            "lastName": "Smith"
+        },
+        {
+            "id": 2,
+            "firstName": "Riley",
+            "lastName": "Reid"
+        }
+
+    ]
+}
