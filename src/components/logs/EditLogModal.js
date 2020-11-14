@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import M from 'materialize-css/dist/js/materialize.min.js'
 
-const AddLogModel = () => {
+const EditLogModal = () => {
 
     const [message, setMessage] = useState('')
     const [attention, setAttention] = useState(false)
@@ -24,15 +24,19 @@ const AddLogModel = () => {
             M.toast({html: "please enter a message and tech"})
         } else {
             console.log(message, attention, tech)
+
+            //clear fields
             setMessage('')
             setTech('')
             setAttention(false)
         }
+
+
     }
 
     // need modal classname or modals wont work in the return div
     return (
-        <div id="add-log-modal" className="modal" style={modalStyle}>
+        <div id="edit-log-modal" className="modal" style={modalStyle}>
             <div className="modal-content" >
                 <h4>Enter System Log</h4>
 
@@ -85,4 +89,4 @@ const modalStyle = {
     height: '75%'
 }
 
-export default AddLogModel
+export default EditLogModal

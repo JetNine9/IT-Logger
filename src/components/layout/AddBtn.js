@@ -14,7 +14,7 @@ import React from 'react'
                     </a>
                 </li>
                 <li>
-                    <a className="btn-floating red modal-trigger" href="#tech-tech-modal" >
+                    <a className="btn-floating red modal-trigger" href="#add-tech-modal" >
                         <i className="material-icons">person_add</i>
                     </a>
                 </li>

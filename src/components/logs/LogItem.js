@@ -11,7 +11,8 @@ const LogItem = props => {
     return (
         <li className="collection-item">
             <div>
-                <a href="#edit-log-modal" className={`model-trigger  ${props.log.attention ? "red-text" : "blue-text"}`}>{props.log.message}</a>
+            {/* by having edit log modal it allows us to open that component */}
+                <a href="#edit-log-modal" className={`modal-trigger  ${props.log.attention ? "red-text" : "blue-text"}`}>{props.log.message}</a>
                 <br/>
 
                 <span className='grey-text'>

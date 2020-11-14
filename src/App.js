@@ -6,6 +6,10 @@ import SearchBar from './components/layout/SearchBar'
 import Logs from './components/logs/Logs'
 import AddBtn from './components/layout/AddBtn'
 import AddLogModel from './components/logs/AddLogModel'
+import EditLogModal from './components/logs/EditLogModal'
+import AddTechModal from './components/techs/AddTechModal'
+import TechListModal from './components/techs/TechListModal'
+
 
 function App() {
 
@@ -19,6 +23,9 @@ function App() {
       <SearchBar/>
       <div className="container" >
       <AddBtn/>
+      <TechListModal/>
+      <AddTechModal/>
+      <EditLogModal/>
       <AddLogModel/>
       <Logs/>
 
