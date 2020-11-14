@@ -4,6 +4,8 @@ import M from 'materialize-css/dist/js/materialize.min.js'
 import './App.css';
 import SearchBar from './components/layout/SearchBar'
 import Logs from './components/logs/Logs'
+import AddBtn from './components/layout/AddBtn'
+import AddLogModel from './components/logs/AddLogModel'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
     <div className="App">
       <SearchBar/>
       <div className="container" >
+      <AddBtn/>
+      <AddLogModel/>
       <Logs/>
 
       </div>
