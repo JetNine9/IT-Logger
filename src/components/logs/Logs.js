@@ -1,31 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
+import PropTypes from 'prop-types'
 import LogItem from './LogItem'
 import Preloader from '../layout/Preloader'
+import { connect } from 'react-redux';
+import {getLogs} from '../../actions/logActions'
 
 
-const Logs = () => {
-    const [logs, setLogs] = useState([])
-    const [loading, setLoading] = useState(false)
+const Logs = (props) => {
+
+    const {logs, loading} = props.log;
+
 
     useEffect(() => {
-        getLogs();
-
+        props.getLogs();
+        // eslint-disable-next-line
     }, [])
 
-
-    const getLogs = async () => {
-        setLoading(true);
-
-        const res = await axios.get('/logs') // keep in mind we are runnign a proxy so we can just do /logs.
-
-
-        setLogs(res.data) // logs now becomes an array of objects
-        setLoading(false)
-
-    }
-
-    if (loading) {
+    if (loading || logs === null) {
         return <Preloader/>
     }
 
@@ -42,4 +34,19 @@ const Logs = () => {
     )
 }
 
-export default Logs;
+
+Logs.propTypes = {
+    log: PropTypes.object.isRequired,
+}
+
+////////////////// Bringing in Redux state below ///////////////////////////////////
+
+const mapStateToProps = (state) => {
+
+    return {
+        log: state.logState
+    }
+}
+
+// if we need actions we need to bring them in below. Example) getLogs
+export default connect(mapStateToProps, {getLogs})(Logs);
