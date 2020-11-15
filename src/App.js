@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css/dist/js/materialize.min.js'
 import './App.css';
@@ -10,27 +10,31 @@ import EditLogModal from './components/logs/EditLogModal'
 import AddTechModal from './components/techs/AddTechModal'
 import TechListModal from './components/techs/TechListModal'
 
+import { Provider } from 'react-redux';
+import store from './store'
+
 
 function App() {
 
   useEffect(() => {
-      //Initalize material javascript
-      M.AutoInit();
+    //Initalize material javascript
+    M.AutoInit();
   })
 
   return (
-    <div className="App">
-      <SearchBar/>
-      <div className="container" >
-      <AddBtn/>
-      <TechListModal/>
-      <AddTechModal/>
-      <EditLogModal/>
-      <AddLogModel/>
-      <Logs/>
-
+    <Provider store={store}>
+      <div className="App">
+        <SearchBar />
+        <div className="container" >
+          <AddBtn />
+          <TechListModal />
+          <AddTechModal />
+          <EditLogModal />
+          <AddLogModel />
+          <Logs />
+        </div>
       </div>
-    </div>
+    </Provider>
   );
 }
 
