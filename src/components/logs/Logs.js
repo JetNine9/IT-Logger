@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import axios from 'axios'
 import PropTypes from 'prop-types'
 import LogItem from './LogItem'
 import Preloader from '../layout/Preloader'
@@ -44,7 +43,8 @@ Logs.propTypes = {
 const mapStateToProps = (state) => {
 
     return {
-        log: state.logState
+        log: state.logState,
+        getLogs: PropTypes.func.isRequired,
     }
 }
 

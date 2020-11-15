@@ -1,18 +1,11 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on workstation 095",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "sam smith"
-    },
-    {
-      "id": 2,
-      "message": "shit aint working",
+      "message": "Get Pokemon Cards",
       "attention": true,
-      "date": "05-05-2019",
-      "tech": "John Doe"
+      "tech": "LeBron",
+      "date": "2020-11-15T20:20:35.871Z",
+      "id": 1
     }
   ],
   "techs": [
