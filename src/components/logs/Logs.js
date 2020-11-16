@@ -36,6 +36,7 @@ const Logs = (props) => {
 
 Logs.propTypes = {
     log: PropTypes.object.isRequired,
+    getLogs: PropTypes.func.isRequired,
 }
 
 ////////////////// Bringing in Redux state below ///////////////////////////////////
@@ -44,7 +45,6 @@ const mapStateToProps = (state) => {
 
     return {
         log: state.logState,
-        getLogs: PropTypes.func.isRequired,
     }
 }
 

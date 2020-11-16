@@ -1,12 +1,15 @@
 import axios from 'axios'
-import { GET_LOGS,
+import {
+    GET_LOGS,
     SET_LOADING,
     LOGS_ERROR,
     ADD_LOGS,
     DELETE_LOG,
     SET_CURRENT,
     UPDATE_LOG,
-    CLEAR_CURRENT } from './types'
+    CLEAR_CURRENT,
+    SEARCH_LOGS
+} from './types'
 
 
 
@@ -113,6 +116,28 @@ export const updateLog = (log) => async dispatch => {
         })
     }
 
+
+}
+
+// Search Logs
+export const searchLogs = text => async dispatch => {
+    try {
+
+        setLoading();
+        const res = await axios.get("/logs?q=" + text)
+
+
+        dispatch({
+            type: SEARCH_LOGS,
+            payload: res.data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: LOGS_ERROR,
+            payload: error.response.data
+        })
+    }
 
 }
 
