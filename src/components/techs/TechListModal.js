@@ -1,30 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useEffect } from 'react'
 import TechItem from './TechItem'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux';
+import { getTech,  } from '../../actions/techActions'
 
 
 
 
-const TechListModal = () => {
-    const [techs, setTechs] = useState([])
-    const [loading, setLoading] = useState(false)
+const TechListModal = (props) => {
+
+    const {loading, techs} = props.techs
 
     useEffect(() => {
-        getTechs();
-
+        props.getTech();
+    // eslint-disable-next-line
     }, [])
-
-
-    const getTechs = async () => {
-        setLoading(true);
-
-        const res = await axios.get('/techs') // keep in mind we are runnign a proxy so we can just do /logs.
-
-
-        setTechs(res.data) // logs now becomes an array of objects
-        setLoading(false)
-
-    }
 
 
 
@@ -33,7 +23,7 @@ const TechListModal = () => {
            <div className="modal-content" >
                 <h4>Technician List</h4>
                 <ul className="collection" >
-                    {!loading && techs.map((tech) => {
+                    {!loading && techs !== null && techs.map((tech) => {
                         return <TechItem tech={tech} key={tech.id} />
                     })}
                 </ul>
@@ -42,4 +32,16 @@ const TechListModal = () => {
     )
 }
 
-export default TechListModal;
+TechListModal.propTypes = {
+    techs: PropTypes.object.isRequired,
+    getTech: PropTypes.func.isRequired,
+
+}
+
+const mapStateToProps = (state) => {
+    return {
+        techs: state.tech
+    }
+}
+
+export default connect(mapStateToProps, {getTech}) (TechListModal);
