@@ -35,9 +35,6 @@ const AddLogModel = (props) => {
                 date: new Date()
             }
 
-            console.log(newLog)
-
-
 
             props.addLog(newLog)
 

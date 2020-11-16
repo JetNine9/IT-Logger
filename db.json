@@ -1,11 +1,11 @@
 {
   "logs": [
     {
-      "message": "Get Pokemon Cards",
+      "id": 1,
+      "message": "fixed wording",
       "attention": true,
-      "tech": "LeBron",
-      "date": "2020-11-15T20:20:35.871Z",
-      "id": 1
+      "tech": "john doe",
+      "date": "2020-11-16T02:04:38.610Z"
     }
   ],
   "techs": [
